@@ -13,7 +13,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center gap-2 md:items-start">
             <img
-              src="/assets/brand/logo-chrome.png"
+              src="/assets/brand/logo.webp"
               alt="Piso 12 Perreo"
               width={360}
               height={140}

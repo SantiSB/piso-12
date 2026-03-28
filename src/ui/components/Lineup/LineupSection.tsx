@@ -64,10 +64,10 @@ export function LineupSection() {
   const support = ARTISTS.filter((a) => a.role !== 'headliner');
 
   return (
-    <SectionWrapper id="lineup" className="bg-background px-0 pb-10 md:pb-14">
+    <SectionWrapper id="lineup" className="bg-surface-light px-0 pb-0">
       {headliner ? <HeadlinerSpotlight artist={headliner} /> : null}
 
-      <div className="mx-auto max-w-5xl px-6 pt-8 md:pt-10">
+      {/* <div className="mx-auto max-w-5xl px-6 pt-8 md:pt-10"> 
         <SectionHeading
           label="Lineup"
           title="Artistas"
@@ -76,7 +76,6 @@ export function LineupSection() {
           className="mb-6 md:mb-8"
         />
 
-        {/* Staggered card grid */}
         <motion.div
           className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"
           variants={gridVariants}
@@ -90,7 +89,7 @@ export function LineupSection() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </div>*/}
     </SectionWrapper>
   );
 }

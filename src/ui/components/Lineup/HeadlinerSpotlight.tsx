@@ -4,7 +4,7 @@ import type { HeadlinerSpotlightProps } from './HeadlinerSpotlight.types.js';
 export function HeadlinerSpotlight({ artist }: HeadlinerSpotlightProps) {
   return (
     <article
-      className="relative w-full overflow-hidden bg-background"
+      className="relative w-full overflow-hidden bg-surface-light md:mx-auto md:max-w-xl lg:max-w-2xl"
       aria-label={artist.name}
     >
       <h2 className="sr-only">{artist.name}</h2>

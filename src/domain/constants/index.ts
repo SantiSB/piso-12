@@ -18,7 +18,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Ñejo El Broko',
     role: 'headliner',
-    imageUrl: '/assets/artist/nejo.jpg',
+    imageUrl: '/assets/artist/ñejo.webp',
   },
   {
     name: 'RESET',

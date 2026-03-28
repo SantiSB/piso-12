@@ -57,6 +57,15 @@ body {
   mix-blend-mode: multiply;
 }
 
+/* Hero background video: reduce native play overlay on iOS/WebKit when autoplay runs */
+.hero-bg-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-bg-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
 /* ─── Marquee ticker ─────────────────────────────────────────────────── */
 @keyframes marquee-x {
   from { transform: translateX(0); }

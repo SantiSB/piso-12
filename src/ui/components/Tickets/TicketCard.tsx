@@ -52,7 +52,7 @@ export function TicketCard({ tier, isFeatured = false }: TicketCardProps) {
       <div className="flex flex-col gap-4 mb-8 flex-1">
         <PriceLine label="Lanzamiento" price={tier.pricing.launch} isHighlighted />
         <PriceLine label="Preventa" price={tier.pricing.preventa} />
-        <PriceLine label="Precio lleno" price={tier.pricing.full} />
+        <PriceLine label="Precio full" price={tier.pricing.full} />
       </div>
 
       <Button

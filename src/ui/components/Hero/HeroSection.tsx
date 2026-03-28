@@ -10,6 +10,25 @@ export function HeroSection() {
     const video = videoRef.current;
     if (!video) return;
 
+    // Mobile Safari often ignores HTML autoplay after React mounts; muted + playsInline + programmatic play is required.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute('muted', '');
+    video.playsInline = true;
+
+    const tryPlay = () => {
+      void video.play().catch(() => {
+        /* Low Power Mode / strict policies — no overlay fix without user gesture */
+      });
+    };
+
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      tryPlay();
+    } else {
+      video.addEventListener('canplay', tryPlay, { once: true });
+      video.addEventListener('loadeddata', tryPlay, { once: true });
+    }
+
     const handleTimeUpdate = () => {
       if (video.currentTime >= HERO_VIDEO_LOOP_END_SEC) {
         video.currentTime = HERO_VIDEO_LOOP_START_SEC;
@@ -17,7 +36,11 @@ export function HeroSection() {
     };
 
     video.addEventListener('timeupdate', handleTimeUpdate);
-    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
+    return () => {
+      video.removeEventListener('canplay', tryPlay);
+      video.removeEventListener('loadeddata', tryPlay);
+      video.removeEventListener('timeupdate', handleTimeUpdate);
+    };
   }, []);
 
   return (
@@ -25,11 +48,15 @@ export function HeroSection() {
       {/* Full-bleed: cover fills width + height (may crop sides on narrow portrait) */}
       <video
         ref={videoRef}
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+        className="hero-bg-video absolute inset-0 z-0 h-full w-full object-cover object-center"
         src="/assets/videos/pitbull_chain.mp4"
         autoPlay
         muted
         playsInline
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        disableRemotePlayback
         aria-hidden="true"
       />
 
