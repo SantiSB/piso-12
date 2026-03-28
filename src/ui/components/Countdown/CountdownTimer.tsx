@@ -37,12 +37,12 @@ function Separator() {
   return (
     <motion.span
       className="font-heading font-black text-chrome text-4xl md:text-6xl leading-none self-start mt-2"
-      animate={{ opacity: [1, 0.15, 1] }}
+      animate={{ opacity: [0.75, 0.18, 0.75] }}
       transition={{
-        duration: 1.8,
+        duration: 2.2,
         repeat: Infinity,
         ease: 'easeInOut',
-        repeatDelay: 0.1,
+        repeatDelay: 0,
       }}
     >
       :
@@ -58,7 +58,7 @@ export function CountdownTimer() {
       className="border-t border-b text-foreground-dark bg-void py-12 md:py-16"
       style={{
         borderTopColor: 'var(--color-border-dark)',
-        borderBottomColor: 'rgba(200,200,212,0.25)',
+        borderBottomColor: 'var(--color-border-dark)',
       }}
     >
       <div className="max-w-4xl mx-auto px-6">

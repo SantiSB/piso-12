@@ -71,6 +71,7 @@ export function HeroCanvas() {
       opacity: 0.72,
       depthWrite: false,
       sizeAttenuation: true,
+      blending: THREE.AdditiveBlending,
     });
 
     scene.add(new THREE.Points(geo, mat));

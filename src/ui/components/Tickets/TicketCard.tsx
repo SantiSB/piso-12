@@ -17,7 +17,12 @@ export function TicketCard({ tier, isFeatured = false }: TicketCardProps) {
           : 'bg-background'
       }`}
       style={{ border: isFeatured ? undefined : '1px solid var(--color-border-light)' }}
-      whileHover={{ y: isFeatured ? -8 : -5 }}
+      whileHover={{
+        y: isFeatured ? -8 : -5,
+        boxShadow: isFeatured
+          ? '0 12px 40px rgba(232, 23, 58, 0.12), 0 4px 16px rgba(0,0,0,0.08)'
+          : '0 8px 32px rgba(0,0,0,0.08)',
+      }}
       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
     >
       {isFeatured && (
@@ -29,12 +34,12 @@ export function TicketCard({ tier, isFeatured = false }: TicketCardProps) {
           <motion.div
             className="absolute inset-0 pointer-events-none"
             style={{ border: '1px solid var(--color-accent)' }}
-            animate={{ opacity: [0, 0.55, 0] }}
+            animate={{ opacity: [0, 0.32, 0] }}
             transition={{
-              duration: 2.8,
+              duration: 3.2,
               repeat: Infinity,
               ease: 'easeInOut',
-              repeatDelay: 0.4,
+              repeatDelay: 0.2,
             }}
             aria-hidden="true"
           />

@@ -19,7 +19,7 @@ export function VenueSection() {
             src="https://maps.google.com/maps?q=1.216507,-77.28956&z=17&output=embed"
             width="100%"
             height="400"
-            style={{ border: 0, filter: 'grayscale(20%)' }}
+            style={{ border: 0, filter: 'grayscale(80%) contrast(1.05)' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -46,7 +46,7 @@ interface DetailCardProps {
 function DetailCard({ label, value }: DetailCardProps) {
   return (
     <div
-      className="flex h-full flex-col bg-background px-3 py-3 md:px-4 md:py-4"
+      className="flex h-full flex-col bg-background px-3 py-3 md:px-4 md:py-4 transition-[border-color] duration-200 hover:border-accent/40"
       style={{ border: '1px solid var(--color-border-light)' }}
     >
       <p className="mb-1 shrink-0 font-heading text-[10px] tracking-[0.28em] text-accent uppercase md:text-xs md:tracking-[0.3em]">

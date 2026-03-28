@@ -27,7 +27,7 @@ export function Footer() {
                 <li key={phone}>
                   <a
                     href={`tel:${phone.replace(/-/g, '')}`}
-                    className="font-body text-sm text-chrome hover:text-foreground-dark transition-colors duration-200 focus:outline-none focus:underline"
+                    className="font-body text-sm text-chrome hover:text-foreground-dark transition-colors duration-200 focus:outline-none focus-visible:underline"
                     aria-label={`Llamar al ${phone}`}
                   >
                     {phone}
@@ -52,7 +52,14 @@ export function Footer() {
           </div>
           <p className="text-center font-body text-[10px] font-light tracking-[0.28em] text-chrome/55 uppercase">
             Desarrollado por{' '}
-            <span className="font-heading text-chrome">PASSTIX</span>
+            <a
+              href={PASSTIX_CREDIT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-heading text-chrome transition-colors duration-200 hover:text-foreground-dark focus-visible:underline focus:outline-none"
+            >
+              PASSTIX
+            </a>
           </p>
         </div>
       </div>

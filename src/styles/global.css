@@ -11,6 +11,7 @@
   --color-accent: #E8173A;
   --color-accent-foreground: #FFFFFF;
   --color-chrome: #C8C8D4;
+  --color-chrome-dim: #8A8A96;
   --color-border-dark: rgba(200, 200, 212, 0.12);
   --color-border-light: rgba(0, 0, 0, 0.1);
 
@@ -28,6 +29,11 @@ body {
   background: var(--color-void);
   color: var(--color-foreground-dark);
   overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-foreground);
 }
 
 ::-webkit-scrollbar {
